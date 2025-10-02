@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.Pages.AddPage"
+             Title="Nova Tarefa"
+             BackgroundColor="#F7F8FC">
+
+    <ScrollView Padding="20">
+
+        <VerticalStackLayout Spacing="20" VerticalOptions="Center">
+
+            <!-- Cabeçalho -->
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                <Label Text="Nova Tarefa"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="#4C6D80"
+                       HorizontalOptions="Center" />
+                <Label Text="Preencha os detalhes abaixo para adicionar uma nova tarefa"
+                       FontSize="14"
+                       TextColor="#7F8C9D"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+
+            <!-- Container do formulário -->
+            <Border BackgroundColor="White"
+                    StrokeShape="RoundRectangle 16"
+                    StrokeThickness="0"
+                    Padding="30"
+                    Shadow="Medium"
+                    Margin="0,10">
+
+                <VerticalStackLayout Spacing="22">
+
+                    <!-- Título -->
+                    <VerticalStackLayout>
+                        <Label Text="Título"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#4C6D80"/>
+                        <Frame HasShadow="True"
+                               BackgroundColor="#F2F4F7"
+                               CornerRadius="10"
+                               Padding="0">
+                            <Entry x:Name="txtTitle"
+                                   Placeholder="Digite o título da tarefa"
+                                   TextColor="#4C6D80"
+                                   PlaceholderColor="#BDC3C7"
+                                   HeightRequest="40"/>
+                        </Frame>
+                    </VerticalStackLayout>
+
+                    <!-- Descrição -->
+                    <VerticalStackLayout>
+                        <Label Text="Descrição"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#4C6D80"/>
+                        <Frame HasShadow="True"
+                               BackgroundColor="#F2F4F7"
+                               CornerRadius="10"
+                               Padding="0">
+                            <Editor x:Name="txtDescription"
+                                    Placeholder="Digite a descrição"
+                                    AutoSize="TextChanges"
+                                    TextColor="#4C6D80"
+                                    PlaceholderColor="#BDC3C7"
+                                    HeightRequest="100"/>
+                        </Frame>
+                    </VerticalStackLayout>
+
+                    <!-- Data -->
+                    <VerticalStackLayout>
+                        <Label Text="Data de Criação"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#4C6D80"/>
+                        <Frame HasShadow="True"
+                               BackgroundColor="#F2F4F7"
+                               CornerRadius="10"
+                               Padding="0">
+                            <DatePicker x:Name="txtCreated"
+                                        TextColor="#4C6D80"/>
+                        </Frame>
+                    </VerticalStackLayout>
+
+                    <!-- Prioridade -->
+                    <VerticalStackLayout>
+                        <Label Text="Prioridade"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#4C6D80"/>
+                        <Frame HasShadow="True"
+                               BackgroundColor="#F2F4F7"
+                               CornerRadius="10"
+                               Padding="0">
+                            <Entry x:Name="txtPriority"
+                                   Keyboard="Numeric"
+                                   Placeholder="Ex: 1 (alta), 2 (média), 3 (baixa)"
+                                   TextColor="#4C6D80"
+                                   PlaceholderColor="#BDC3C7"/>
+                        </Frame>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Botões -->
+            <VerticalStackLayout Spacing="20">
+                <Button Text="Adicionar"
+                        Clicked="onAdd"
+                        BackgroundColor="#4C6D80"
+                        TextColor="White"
+                        CornerRadius="12"
+                        FontAttributes="Bold"
+                        HeightRequest="50"
+                        Padding="10"/>
+                <Button Text="Cancelar"
+                        Clicked="onCancel"
+                        BackgroundColor="#BDC3C7"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="50"
+                        Padding="10"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

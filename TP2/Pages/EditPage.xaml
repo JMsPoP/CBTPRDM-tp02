@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.Pages.EditPage"
+             Title="Editar Tarefa"
+             BackgroundColor="#F7F8FC">
+
+    <AbsoluteLayout>
+
+        <ScrollView AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                    Padding="20">
+
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+
+                <Border BackgroundColor="White"
+                        StrokeShape="RoundRectangle 16"
+                        StrokeThickness="0"
+                        Padding="30"
+                        HorizontalOptions="FillAndExpand">
+
+                    <StackLayout Spacing="22">
+
+                        <!-- Título da Página -->
+                        <Label Text="Editar Tarefa" 
+                               FontAttributes="Bold" 
+                               FontSize="30"
+                               TextColor="#4C6D80"
+                               HorizontalOptions="Center"
+                               Margin="0, 0, 0, 20"/>
+
+                        <!-- Campo: Título -->
+                        <StackLayout>
+                            <Label Text="Título:" 
+                                   FontAttributes="Bold" 
+                                   FontSize="18" 
+                                   TextColor="#4C6D80"
+                                   Margin="0, 0, 0, 5"/>
+                            <Frame HasShadow="True"
+                                   BackgroundColor="#F2F4F7"
+                                   CornerRadius="12"
+                                   Padding="0">
+                                <Entry x:Name="txtTitle" 
+                                       Placeholder="Digite o título da tarefa" 
+                                       Text="{Binding Title}" 
+                                       TextColor="Black"
+                                       PlaceholderColor="#BDC3C7"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Campo: Descrição -->
+                        <StackLayout>
+                            <Label Text="Descrição:" 
+                                   FontAttributes="Bold" 
+                                   FontSize="18" 
+                                   TextColor="#4C6D80"
+                                   Margin="0, 0, 0, 5"/>
+                            <Frame HasShadow="True"
+                                   BackgroundColor="#F2F4F7"
+                                   CornerRadius="12"
+                                   Padding="0">
+                                <Editor x:Name="txtDescription" 
+                                        Placeholder="Digite a descrição da tarefa" 
+                                        AutoSize="TextChanges" 
+                                        HeightRequest="100"
+                                        Text="{Binding Description}" 
+                                        TextColor="Black"
+                                        PlaceholderColor="#BDC3C7"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Campo: Data de Criação -->
+                        <StackLayout>
+                            <Label Text="Data de Criação:" 
+                                   FontAttributes="Bold" 
+                                   FontSize="18" 
+                                   TextColor="#4C6D80"
+                                   Margin="0, 0, 0, 5"/>
+                            <Frame HasShadow="True"
+                                   BackgroundColor="#F2F4F7"
+                                   CornerRadius="12"
+                                   Padding="0">
+                                <DatePicker x:Name="txtCreated" 
+                                            Date="{Binding CreateAt}" 
+                                            TextColor="Black"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Campo: Prioridade -->
+                        <StackLayout>
+                            <Label Text="Prioridade:" 
+                                   FontAttributes="Bold" 
+                                   FontSize="18" 
+                                   TextColor="#4C6D80"
+                                   Margin="0, 0, 0, 5"/>
+                            <Frame HasShadow="True"
+                                   BackgroundColor="#F2F4F7"
+                                   CornerRadius="12"
+                                   Padding="0">
+                                <Entry x:Name="txtPriority" 
+                                       Placeholder="Ex: 1 (Alta), 2 (Média), 3 (Baixa)" 
+                                       Keyboard="Numeric" 
+                                       Text="{Binding Priority}" 
+                                       TextColor="Black"
+                                       PlaceholderColor="#BDC3C7"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Botões -->
+                        <HorizontalStackLayout HorizontalOptions="End" 
+                                               Margin="0, 30, 0, 0" 
+                                               Spacing="15">
+                            <Button Text="Salvar" 
+                                    Clicked="onEdit" 
+                                    BackgroundColor="#4C6D80" 
+                                    TextColor="White" 
+                                    CornerRadius="12" 
+                                    HeightRequest="50" 
+                                    WidthRequest="120"/>
+                            <Button Text="Cancelar" 
+                                    Clicked="onCancel" 
+                                    BackgroundColor="#BDC3C7" 
+                                    TextColor="White" 
+                                    CornerRadius="12" 
+                                    HeightRequest="50" 
+                                    WidthRequest="120"/>
+                        </HorizontalStackLayout>
+
+                    </StackLayout>
+                </Border>
+            </Grid>
+        </ScrollView>
+    </AbsoluteLayout>
+</ContentPage>
